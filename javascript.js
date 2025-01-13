@@ -21,20 +21,6 @@ function getComputerChoice(){
     }      //if less than 2 make 1
       //if greater than or equal to 2 but less than 3 make 2
 
-
-    /*if (input === "rock" || input === "paper" || input === "scissors") {
-        alert("You entered: " + input);
-        console.log("User entered: " + input);
-        return input;
-    } else {
-        alert("You have to put rock, paper, or scissors");
-    }
-    return Math.random()
-   
- */
-
-
-
 //step 3
 function getHumanChoice(input) {
   switch(input) {
@@ -48,8 +34,6 @@ function getHumanChoice(input) {
           return null;
   }
 }
-
-
 
 alert("the bot chose " + getComputerChoice());
 //change this to the top so that the player goes first 
@@ -65,9 +49,9 @@ function determineWinner(humanChoice, computerChoice) {
       (humanChoice === "Paper" && computerChoice === "Rock") ||
       (humanChoice === "Scissors" && computerChoice === "Paper")
   ) {
-      return "You win!";
+      return "Human";
   }
-  return "You lose!";
+  return "Computer";
 }
 
 const humanChoice = getHumanChoice(input);
@@ -75,12 +59,13 @@ const humanChoice = getHumanChoice(input);
 if (humanChoice) {
   const computerChoice = getComputerChoice();
   alert("You chose: " + humanChoice + "\nThe computer chose: " + computerChoice);
+
   const result = determineWinner(humanChoice, computerChoice);
+//remove line
   alert(result);
 } else {
   alert("Invalid input. Please enter 1, 2, or 3.");
 }
-
 
 
 //Step 5
@@ -96,8 +81,20 @@ const computerSelection = getComputerChoice();
 playRound(humanSelection, computerSelection);
 
 
-//let choices = rock = 1, paper =2, scissors =3;
+//Step 4
+if(result=== "Human"){
 
+  humanscore++;
+  alert("The Human has won!");
+}
+else if(result=== "Computer"){
+  computerScore++;
+  alert("The Computer has won!")
+
+} else{
+  alert("It's a tie!");
+
+}
 
 
 
