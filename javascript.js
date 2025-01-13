@@ -18,11 +18,11 @@ function getComputerChoice(){
       } else {
         return "Scissors";
       }
-      //if less than 2 make 1
+    }      //if less than 2 make 1
       //if greater than or equal to 2 but less than 3 make 2
 
 
-    if (input === "rock" || input === "paper" || input === "scissors") {
+    /*if (input === "rock" || input === "paper" || input === "scissors") {
         alert("You entered: " + input);
         console.log("User entered: " + input);
         return input;
@@ -31,7 +31,7 @@ function getComputerChoice(){
     }
     return Math.random()
    
-}
+ */
 
 
 
@@ -59,6 +59,7 @@ function determineWinner(humanChoice, computerChoice) {
   if (humanhoice === computerChoice) {
       return "It's a tie!";
   }
+  //can reuse this to keep track of the score and incriment
   if (
       (humanChoice === "Rock" && computerChoice === "Scissors") ||
       (humanChoice === "Paper" && computerChoice === "Rock") ||
