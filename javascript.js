@@ -2,8 +2,12 @@ console.log("Hello World");
 //Step 4
 let humanScore = 0;
 let computerScore = 0;
+function playGame(){
 
-let input = prompt("Press 1 for rock\nPress 2 for paper\nPress 3 for scissors");
+  let input = prompt("Press 1 for rock\nPress 2 for paper\nPress 3 for scissors");
+
+
+
 
 //making a function to let the computer make a choice of which number to display 1,2 or 3
 // Step 2
@@ -40,7 +44,7 @@ alert("the bot chose " + getComputerChoice());
 
 
 function determineWinner(humanChoice, computerChoice) {
-  if (humanhoice === computerChoice) {
+  if (humanChoice === computerChoice) {
       return "It's a tie!";
   }
   //can reuse this to keep track of the score and incriment
@@ -63,10 +67,10 @@ if (humanChoice) {
     alert("You chose: " + humanChoice + "\nThe computer chose: " + computerChoice);
     const result = determineWinner(humanChoice, computerChoice);
     
-    if (result === "human") {
+    if (result === "Human") {
         humanScore++;
         alert("You win this round!");
-    } else if (result === "computer") {
+    } else if (result === "Computer") {
         computerScore++;
         alert("Computer wins this round!");
     } else {
@@ -87,3 +91,14 @@ const computerSelection = getComputerChoice();
 
 playRound(humanSelection, computerSelection);
 console.log("track end of code");
+
+let playAgain = confirm("Do you want to play again?");
+    if (playAgain) {
+        playGame();
+    } else {
+        alert("Final Scores:\nYou: " + humanScore + "\nComputer: " + computerScore);
+    }
+  }
+playGame();
+
+
