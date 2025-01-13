@@ -1,11 +1,12 @@
 console.log("Hello World");
-
+//Step 4
 let humanScore = 0;
 let computerScore = 0;
 
 let input = prompt("Press 1 for rock\nPress 2 for paper\nPress 3 for scissors");
 
 //making a function to let the computer make a choice of which number to display 1,2 or 3
+// Step 2
 function getComputerChoice(){
 
     const randomNumber = Math.random();
@@ -64,7 +65,7 @@ function getComputerChoice(){
 
 
 /*
-
+//step 3
 function getHumanChoice(input) {
   switch(input) {
       case "1":
@@ -98,7 +99,8 @@ function determineWinner(humanChoice, computerChoice) {
   return "You lose!";
 }
 
-const humanChoice = getUserChoice(input);
+const humanChoice = getHumanChoice(input);
+
 if (humanChoice) {
   const computerChoice = getComputerChoice();
   alert("You chose: " + humanChoice + "\nThe computer chose: " + computerChoice);
@@ -108,6 +110,18 @@ if (humanChoice) {
   alert("Invalid input. Please enter 1, 2, or 3.");
 }
 */
+
+
+//Step 5
+function playRound(humanChoice, computerChoice) {
+  // your code here!
+}
+
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
+
+playRound(humanSelection, computerSelection);
+
 
 //have math.random only choose numbers from 1 to 3
 //rock 1 etc
