@@ -30,14 +30,47 @@ function getComputerChoice(){
 }
 
 
+function getUserChoice(input) {
+  switch(input) {
+      case "1":
+          return "Rock";
+      case "2":
+          return "Paper";
+      case "3":
+          return "Scissors";
+      default:
+          return null;
+  }
+}
+
+
+
 alert("the bot chose " + getComputerChoice());
 //change this to the top so that the player goes first 
 
 
-if(randomNumber){
+function determineWinner(userChoice, computerChoice) {
+  if (userChoice === computerChoice) {
+      return "It's a tie!";
+  }
+  if (
+      (userChoice === "Rock" && computerChoice === "Scissors") ||
+      (userChoice === "Paper" && computerChoice === "Rock") ||
+      (userChoice === "Scissors" && computerChoice === "Paper")
+  ) {
+      return "You win!";
+  }
+  return "You lose!";
+}
 
-
-
+const userChoice = getUserChoice(input);
+if (userChoice) {
+  const computerChoice = getComputerChoice();
+  alert("You chose: " + userChoice + "\nThe computer chose: " + computerChoice);
+  const result = determineWinner(userChoice, computerChoice);
+  alert(result);
+} else {
+  alert("Invalid input. Please enter 1, 2, or 3.");
 }
 
 
