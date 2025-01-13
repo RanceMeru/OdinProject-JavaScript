@@ -114,7 +114,9 @@ if (humanChoice) {
 
 //Step 5
 function playRound(humanChoice, computerChoice) {
-  // your code here!
+
+  return humanChoice.toLowerCase()=== computerChoice.toLowerCase();
+
 }
 
 const humanSelection = getHumanChoice();
