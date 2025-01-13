@@ -56,45 +56,34 @@ function determineWinner(humanChoice, computerChoice) {
 
 const humanChoice = getHumanChoice(input);
 
+
+
 if (humanChoice) {
-  const computerChoice = getComputerChoice();
-  alert("You chose: " + humanChoice + "\nThe computer chose: " + computerChoice);
-
-  const result = determineWinner(humanChoice, computerChoice);
-//remove line
-  alert(result);
+    const computerChoice = getComputerChoice();
+    alert("You chose: " + humanChoice + "\nThe computer chose: " + computerChoice);
+    const result = determineWinner(humanChoice, computerChoice);
+    
+    if (result === "human") {
+        humanScore++;
+        alert("You win this round!");
+    } else if (result === "computer") {
+        computerScore++;
+        alert("Computer wins this round!");
+    } else {
+        alert("It's a tie!");
+    }
+    
+    alert("Current Scores:\nYou: " + humanScore + "\nComputer: " + computerScore);
 } else {
-  alert("Invalid input. Please enter 1, 2, or 3.");
+    alert("Invalid input. Please enter 1, 2, or 3.");
 }
-
-
-//Step 5
+console.log("track score");
 function playRound(humanChoice, computerChoice) {
-
-  return humanChoice.toLowerCase()=== computerChoice.toLowerCase();
-
+  return humanChoice.toLowerCase() === computerChoice.toLowerCase();
 }
 
-const humanSelection = getHumanChoice();
+const humanSelection = getHumanChoice(input);
 const computerSelection = getComputerChoice();
 
 playRound(humanSelection, computerSelection);
-
-
-//Step 4
-if(result=== "Human"){
-
-  humanscore++;
-  alert("The Human has won!");
-}
-else if(result=== "Computer"){
-  computerScore++;
-  alert("The Computer has won!")
-
-} else{
-  alert("It's a tie!");
-
-}
-
-
-
+console.log("track end of code");
