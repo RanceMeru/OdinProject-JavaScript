@@ -50,23 +50,32 @@ alert("the bot chose " + getComputerChoice());
 function playRound(humanChoice, computerChoice) {
   humanChoice = humanChoice.toLowerCase();
   computerChoice = computerChoice.toLowerCase();
-  
+  if(humanChoice === computerChoice){
+    console.log("It's a tie!");
+    return "Tie";
+  }
   //can reuse this to keep track of the score and incriment
   if (
       (humanChoice === "Rock" && computerChoice === "Scissors") ||
       (humanChoice === "Paper" && computerChoice === "Rock") ||
       (humanChoice === "Scissors" && computerChoice === "Paper")
   ) {
+    console.log("You win!" + humanChoice + "beats"+ computerChoice);
+    humanScore++;
       return "Human";
+  }else{
+
+    computerScore++;
+    return "Computer";
   }
-  return "Computer";
+  
 }
 //when this is changed the game is cut short but together it is fine but does not function as intended
 const humanChoice = getHumanChoice(input);
 
 const computerChoice = getComputerChoice();
 
-console.log("logical");
+
 
 //this is where the bot chooses a different option then what was said in the previous dialog
 if (humanChoice) {
