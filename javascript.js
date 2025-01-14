@@ -51,10 +51,9 @@ alert("the bot chose " + getComputerChoice());
 //change this to the top so that the player goes first 
 
 
-function determineWinner(humanChoice, computerChoice) {
-  if (humanChoice === computerChoice) {
-      return "It's a tie!";
-  }
+function playRound(humanChoice, computerChoice) {
+  humanChoice = humanChoice.toLowerCase();
+  computerChoice = computerChoice.toLowerCase();
   //can reuse this to keep track of the score and incriment
   if (
       (humanChoice === "Rock" && computerChoice === "Scissors") ||
@@ -98,7 +97,8 @@ console.log("track score");
 
 //all below exceot function call was removed
 const humanSelection = getHumanChoice(input);
-const computerSelection = getComputerChoice();
+
+const computerSelection = getComputerChoice();//each time generates a new choice
 
 playRound(humanSelection, computerSelection);
 console.log("track end of code");
