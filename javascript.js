@@ -59,11 +59,11 @@ function determineWinner(humanChoice, computerChoice) {
 }
 
 const humanChoice = getHumanChoice(input);
-
+const computerChoice = getComputerChoice();
 
 
 if (humanChoice) {
-    const computerChoice = getComputerChoice();
+    
     alert("You chose: " + humanChoice + "\nThe computer chose: " + computerChoice);
     const result = determineWinner(humanChoice, computerChoice);
     
@@ -76,6 +76,7 @@ if (humanChoice) {
     } else {
         alert("It's a tie!");
     }
+
     
     alert("Current Scores:\nYou: " + humanScore + "\nComputer: " + computerScore);
 } else {
