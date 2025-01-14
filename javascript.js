@@ -98,16 +98,10 @@ if (humanChoice) {
 } else {
     alert("Invalid input. Please enter rock, papper, or scissors.");
 }
-console.log("track score");
+
 
 
 //all below exceot function call was removed
-const humanSelection = getHumanChoice(input);
-
-const computerSelection = getComputerChoice();//each time generates a new choice
-
-playRound(humanSelection, computerSelection);
-console.log("track end of code");
 
 let playAgain = confirm("Do you want to play again?");
     if (playAgain) {
