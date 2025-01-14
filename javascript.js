@@ -9,10 +9,6 @@ function playGame(){
 //makes a prompt that displays a message and takes inn input
   let input = prompt("type rock, paper or scissors");
 
-  function playRound(humanChoice, computerChoice) {
-    return humanChoice.toLowerCase() === computerChoice.toLowerCase();
-  }
-
 
   //step 3
 function getHumanChoice(input) {
@@ -54,6 +50,7 @@ alert("the bot chose " + getComputerChoice());
 function playRound(humanChoice, computerChoice) {
   humanChoice = humanChoice.toLowerCase();
   computerChoice = computerChoice.toLowerCase();
+  
   //can reuse this to keep track of the score and incriment
   if (
       (humanChoice === "Rock" && computerChoice === "Scissors") ||
