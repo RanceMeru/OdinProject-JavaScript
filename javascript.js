@@ -7,7 +7,7 @@ let computerScore = 0;
 function playGame(){
 //step 6
 //makes a prompt that displays a message and takes inn input
-  let input = prompt("Press 1 for rock\nPress 2 for paper\nPress 3 for scissors");
+  let input = prompt("type rock, paper or scissors");
 
   function playRound(humanChoice, computerChoice) {
     return humanChoice.toLowerCase() === computerChoice.toLowerCase();
@@ -17,11 +17,11 @@ function playGame(){
   //step 3
 function getHumanChoice(input) {
   switch(input) {
-      case "1":
+      case "rock":
           return "Rock";
-      case "2":
+      case "paper":
           return "Paper";
-      case "3":
+      case "scissors":
           return "Scissors";
       default:
           return null;
@@ -75,7 +75,7 @@ console.log("logical");
 //this is where the bot chooses a different option then what was said in the previous dialog
 if (humanChoice) {
     
-    alert("You chose: " + humanChoice + "\nThe computer chose: " + computerChoice);
+    alert("You chose: " + humanChoice + "\nThe computer chose: " + computerChoice);//someting off with computer choice
     const result = determineWinner(humanChoice, computerChoice);
     
     if (result === "Human") {
@@ -91,7 +91,7 @@ if (humanChoice) {
     
     alert("Current Scores:\nYou: " + humanScore + "\nComputer: " + computerScore);
 } else {
-    alert("Invalid input. Please enter 1, 2, or 3.");
+    alert("Invalid input. Please enter rock, papper, or scissors.");
 }
 console.log("track score");
 
