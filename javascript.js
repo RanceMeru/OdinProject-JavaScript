@@ -11,18 +11,19 @@ function playGame(){
 
 
   //step 3
-function getHumanChoice(input) {
-  switch(input) {
+  function getHumanChoice(input) {
+    switch(input.toLowerCase()) {
       case "rock":
-          return "Rock";
+        return "Rock";
       case "paper":
-          return "Paper";
+        return "Paper";
       case "scissors":
-          return "Scissors";
+        return "Scissors";
       default:
-          return null;
+        return null;
+    }
   }
-}
+  
 
 
 //making a function to let the computer make a choice of which number to display 1,2 or 3
@@ -43,7 +44,6 @@ function getComputerChoice(){
 
 
 
-alert("the bot chose " + getComputerChoice());
 //change this to the top so that the player goes first 
 
 
@@ -56,48 +56,44 @@ function playRound(humanChoice, computerChoice) {
   }
   //can reuse this to keep track of the score and incriment
   if (
-      (humanChoice === "Rock" && computerChoice === "Scissors") ||
-      (humanChoice === "Paper" && computerChoice === "Rock") ||
-      (humanChoice === "Scissors" && computerChoice === "Paper")
-  ) {
-    console.log("You win!" + humanChoice + "beats"+ computerChoice);
-    humanScore++;
-      return "Human";
-  }else{
-
-    computerScore++;
-    return "Computer";
-  }
-  
+    (humanChoice === "rock" && computerChoice === "scissors") ||
+    (humanChoice === "paper" && computerChoice === "rock") ||
+    (humanChoice === "scissors" && computerChoice === "paper")
+) {
+  console.log(`You win! ${humanChoice} beats ${computerChoice}`);
+  humanScore++;
+  return "Human";
 }
+console.log(`You lose!" ${computerChoice} beats ${humanChoice}`);
+computerScore++;
+return "Computer";
+}
+
+
 //when this is changed the game is cut short but together it is fine but does not function as intended
 const humanChoice = getHumanChoice(input);
 
 const computerChoice = getComputerChoice();
 
-
+alert("You chose: " + humanChoice + "\nThe computer chose: " + computerChoice);
 
 //this is where the bot chooses a different option then what was said in the previous dialog
 if (humanChoice) {
-    
-    alert("You chose: " + humanChoice + "\nThe computer chose: " + computerChoice);//someting off with computer choice
-    const result = determineWinner(humanChoice, computerChoice);
-    
-    if (result === "Human") {
-        humanScore++;
-        alert("You win this round!");
-    } else if (result === "Computer") {
-        computerScore++;
-        alert("Computer wins this round!");
-    } else {
-        alert("It's a tie!");
-    }
-
-    
-    alert("Current Scores:\nYou: " + humanScore + "\nComputer: " + computerScore);
+  const result = playRound(humanChoice, computerChoice);
+  
+  if (result === "Human") {
+    alert("You win this round!");
+  } else if (result === "Computer") {
+    alert("Computer wins this round!");
+  } else {
+    alert("It's a tie!");
+  }
+  
+  alert("Current Scores:\nYou: " + humanScore + "\nComputer: " + computerScore);
 } else {
-    alert("Invalid input. Please enter rock, papper, or scissors.");
+  alert("Invalid input. Please enter rock, paper, or scissors.");
 }
+
 
 
 
